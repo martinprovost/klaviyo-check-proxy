@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import requests
 import os
 
 app = Flask(__name__)
+CORS(app)  # ✅ Active CORS pour toutes les origines
 
 KLAVIYO_API_KEY = os.environ.get("KLAVIYO_API_KEY")
 
